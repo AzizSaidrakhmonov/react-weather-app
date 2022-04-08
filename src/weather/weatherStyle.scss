@@ -1,0 +1,235 @@
+$body-background: aliceblue;
+$card-background: #fff;
+$grey-color: grey;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $body-background;
+}
+
+.weather-container {
+    width: 1200px;
+    margin: 40px auto;
+    background-color: $card-background;
+    border-radius: 12px;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 4px 10px rgba($color: #000000, $alpha: .4);
+}
+
+.location {
+    label {
+        font-family: sans-serif;
+        font-size: 22px;
+        font-weight: normal;
+    }
+
+    input {
+        margin-left: 10px;
+        padding: 8px;
+        font-family: sans-serif;
+        font-size: 22px;
+        font-weight: normal;
+        width: 200px;
+        border: 1.5px solid $grey-color;
+        border-radius: 5px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.current-location {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+.current-date {
+    margin-top: 40px;
+    font-family: sans-serif;
+    color: $grey-color;
+    font-size: 20px;
+    text-align: center;
+}
+
+.current-temp {
+    margin-top: 30px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    .temp-icon {
+        width: 130px;
+    }
+
+    .temp {
+        font-size: 50px;
+        font-family: sans-serif;
+        font-weight: 700;
+    }
+}
+
+.description {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.wrapper {
+    margin-top: 70px;
+    display: flex;
+    grid-gap: 40px;
+    justify-content: center;
+
+    .humidity,.wind {
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: normal;
+        text-align: center;
+        color: $grey-color;
+    }
+
+    .humidity-percentage,.wind-speed {
+        margin-top: 20px;
+        font-family: sans-serif;
+        font-size: 22px;
+        font-weight: 500;
+        text-align: center;
+    }
+}
+
+.expected-weather__card-wrapper {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        grid-gap: 20px;
+}
+
+.expected-weather__card {
+    padding: 25px 30px;
+    border-radius: 5px;
+    
+
+    div {
+        margin-bottom: 10px;
+        text-align: center;
+        color: $grey-color;
+        font-family: sans-serif;
+        font-size: 18px;
+    }
+
+    &-date {
+        font-weight: 700;
+        width: 100px;
+    }
+
+    &-img {
+        img {
+            width: 60px;
+            margin: -10px 0;
+        }
+    }
+
+}
+
+.first-card {
+    background-color: dodgerblue;
+    div {
+        color: #fff;
+    }
+}
+
+
+.expected-humidity__percentage {
+    font-weight: 600;
+}
+
+.recharts-responsive-container {
+    height: 300px !important;
+}
+
+@media only screen and (max-width: 769px) {
+    .weather-container {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .location {
+        text-align: center;
+    }
+
+    .current-temp {
+        margin-left: 25%;
+    }
+
+    .expected-weather__data {
+        margin-top: 50px;
+    }
+
+    .expected-weather__card-wrapper {
+        grid-gap: 0;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .expected-weather__card-wrapper {
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .current-temp {
+        margin-left: 20%;
+    }
+}
+
+@media only screen and (max-width: 542px) {
+    .weather-container {
+        width: 90%;
+    }
+
+    .current-temp {
+        margin-left: 15%;
+    }
+}
+
+@media only screen and (max-width: 420px){
+    .current-temp {
+        margin-left: 0;
+    }
+
+    .location {
+        input {
+            margin-top: 5px;
+        }
+    }
+
+    .expected-weather__card {
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 395px) {
+    
+    .current-temp {
+        .temp {
+             font-size: 35px;
+        }
+    }
+
+    .expected-weather__card {
+        padding: 10px;
+    }
+}
